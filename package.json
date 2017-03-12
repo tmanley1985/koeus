@@ -1,6 +1,6 @@
 {
-  "name": "coeus",
-  "version": "1.0.0",
+  "name": "koeus",
+  "version": "0.1.0",
   "description": "A small functional library.",
   "main": "dist/index.js",
   "scripts": {
@@ -10,7 +10,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/tmanley1985/coeus.git"
+    "url": "git+https://github.com/tmanley1985/koeus.git"
   },
   "keywords": [
     "functional",
@@ -22,9 +22,9 @@
   "author": "Thomas A. Manley",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/tmanley1985/coeus/issues"
+    "url": "https://github.com/tmanley1985/koeus/issues"
   },
-  "homepage": "https://github.com/tmanley1985/coeus#readme",
+  "homepage": "https://github.com/tmanley1985/koeus#readme",
   "devDependencies": {
     "babel-cli": "^6.23.0",
     "babel-jest": "^19.0.0",
