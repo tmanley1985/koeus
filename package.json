@@ -1,0 +1,42 @@
+{
+  "name": "coeus",
+  "version": "1.0.0",
+  "description": "A small functional library.",
+  "main": "dist/index.js",
+  "scripts": {
+    "test": "jest ./tests",
+    "build": "babel --out-dir dist src",
+    "prebuild": "rm -rf dist"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tmanley1985/coeus.git"
+  },
+  "keywords": [
+    "functional",
+    "transducers",
+    "composition",
+    "currying",
+    "functor"
+  ],
+  "author": "Thomas A. Manley",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/tmanley1985/coeus/issues"
+  },
+  "homepage": "https://github.com/tmanley1985/coeus#readme",
+  "devDependencies": {
+    "babel-cli": "^6.23.0",
+    "babel-jest": "^19.0.0",
+    "babel-preset-es2015": "^6.22.0",
+    "babel-preset-stage-3": "^6.22.0",
+    "jest": "^19.0.2",
+    "regenerator-runtime": "^0.10.3"
+  },
+  "babel": {
+    "presets": [
+      "es2015",
+      "stage-3"
+    ]
+  }
+}
