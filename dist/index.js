@@ -18,3 +18,12 @@ Object.defineProperty(exports, 'transFilter', {
     return _transduce.transFilter;
   }
 });
+
+var _compose = require('./compose');
+
+Object.defineProperty(exports, 'pipe', {
+  enumerable: true,
+  get: function get() {
+    return _compose.pipe;
+  }
+});
