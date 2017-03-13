@@ -15,3 +15,16 @@ var pipe = exports.pipe = function pipe(fn) {
     }, fn.apply(undefined, arguments));
   };
 };
+
+// AND is a monoid that has true as an identity element.
+var combinePreds = exports.combinePreds = function combinePreds() {
+  for (var _len2 = arguments.length, predicates = Array(_len2), _key2 = 0; _key2 < _len2; _key2++) {
+    predicates[_key2] = arguments[_key2];
+  }
+
+  return function (x) {
+    return predicates.reduce(function (identity, predicate) {
+      return identity && predicate(x);
+    }, true);
+  };
+};

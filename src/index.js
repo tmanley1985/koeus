@@ -1,3 +1,10 @@
-export {transMap, transFilter} from './transduce'
+import {transMap, transFilter} from './transduce'
 
-export {pipe, combinePreds} from './compose'
+import {pipe, combinePreds} from './compose'
+
+export {
+	transMap,
+	transFilter,
+	pipe,
+	combinePreds
+}

@@ -1,29 +1,15 @@
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
-  value: true
+	value: true
 });
+exports.combinePreds = exports.pipe = exports.transFilter = exports.transMap = undefined;
 
 var _transduce = require('./transduce');
 
-Object.defineProperty(exports, 'transMap', {
-  enumerable: true,
-  get: function get() {
-    return _transduce.transMap;
-  }
-});
-Object.defineProperty(exports, 'transFilter', {
-  enumerable: true,
-  get: function get() {
-    return _transduce.transFilter;
-  }
-});
-
 var _compose = require('./compose');
 
-Object.defineProperty(exports, 'pipe', {
-  enumerable: true,
-  get: function get() {
-    return _compose.pipe;
-  }
-});
+exports.transMap = _transduce.transMap;
+exports.transFilter = _transduce.transFilter;
+exports.pipe = _compose.pipe;
+exports.combinePreds = _compose.combinePreds;
