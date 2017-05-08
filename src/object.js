@@ -1,0 +1,1 @@
+export const entries = obj => Object.keys(obj).map(k => obj[k])
