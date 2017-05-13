@@ -72,7 +72,7 @@ The name comes from the K combinator in combinatory logic.
     const four = K(4,2) // 4
 ```
 
-### Id
+#### Id
 Unary function that returns the argument you give it.
 ```js
     import { Id } from 'koeus'
@@ -82,7 +82,7 @@ Unary function that returns the argument you give it.
 ## Logic
 
 
-### combineAnd
+#### combineAnd
 Folds a list of booleans using logical conjunction (AND)
 ```js
     import { combineAnd } from 'koeus'
@@ -91,7 +91,7 @@ Folds a list of booleans using logical conjunction (AND)
     const f = combineAnd([true,true,false]) // true
 ```
 
-### combineAnd
+#### combineAnd
 Folds a list of booleans using logical disjunction (OR)
 ```js
     import { combineOr } from 'koeus'
@@ -101,7 +101,7 @@ Folds a list of booleans using logical disjunction (OR)
     const f = combineAnd([true,true,true]) // true
 ```
 
-### combinePreds
+#### combinePreds
 Takes a list of predicates and returns a predicate that's the conjunction of all of them.
 ```js
     import { combinePreds } from 'koeus'
@@ -112,7 +112,7 @@ Takes a list of predicates and returns a predicate that's the conjunction of all
 ## Lists
 
 
-### map
+#### map
 Accepts a function, then a functor (in this case a list) and runs the function over
 the list.
 ```js
@@ -129,11 +129,61 @@ the list.
 
 ```
 
+#### flatten
+Flattens a list one level.
 
+```js
+    import { flatten } from 'koeus'
+    const flattened = flatten([[2],[3],[4]]) // [2,3,4]
+```
+
+#### deepFlatten
+Flattens a list recursively n-depth levels.
+
+```js
+    import { deepFlatten } from 'koeus'
+    const flattened = deepFlatten([[2, [3]],[3,[3,4]],[4]]) // [2,3,3,3,4,4]
+```
+
+#### partition
+Take a predicate, then a list and returns an array of two arrays, the first of which
+passes the predicate passed in, the second which does not.
+
+```js
+    import { partition } from 'koeus'
+    const arr = [1,2,3,4]
+    const isEven = x => x % 2 === 0
+    const partitioned = partition(isEven)(arr) // [[2,4],[1,3]]
+```
 ## Objects
 
+#### entries
+Takes an object, then returns an array containing the values from it's keys, one level deep.
+```js
+    import { entries } from 'koeus'
+    const obj = { id: 2, name: 'Will'}
+    const vals = entries(obj) // [2, Will]
+```
 ## Transducers
 
+#### transMap
+Takes a transformation function, then returns a reducing function to pass to a reduce function on a list.
+```js
+    import { transMap } from 'koeus'
+
+    const reducingFunction = transMap(x => x + 1)
+
+    const newArray = [5,5].reduce(reducingFunction, []) // [6,6]
+```
+
+#### transFilter
+Takes a predicate function, then returns a reducing function to pass to a reduce function on a list.
+```js
+    import { transMap } from 'koeus'
+
+    const reducingFunction = transFilter(x => x % 2 === 0)
+    const result = [5,2,10].reduce(reducingFunction, []) // [2,10]
+```
 ## Versioning
 
 We use [SemVer](http://semver.org/) for versioning.
