@@ -105,17 +105,17 @@ Folds a list of booleans using logical conjunction (AND)
     import { combineAnd } from 'koeus'
 
     const t = combineAnd([true,true,true]) // true
-    const f = combineAnd([true,true,false]) // true
+    const f = combineAnd([true,true,false]) // false
 ```
 
-#### combineAnd
+#### combineOr
 Folds a list of booleans using logical disjunction (OR)
 ```js
     import { combineOr } from 'koeus'
 
-    const t1 = combineAnd([true,true,true]) // true
-    const t2 = combineAnd([true,false,true]) // true
-    const f = combineAnd([true,true,true]) // true
+    const t1 = combineOr([true,true,true]) // true
+    const t2 = combineOr([true,false,true]) // true
+    const f = combineOr([false,false,false]) // false
 ```
 
 #### combinePreds
