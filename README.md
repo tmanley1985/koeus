@@ -1,7 +1,15 @@
 # Koeus
 A small functional library for javascript
 
-#### I wrote the greatest README in the world, this is just a tribute.
+## About
+The K Combinator + Coeus (Greek Titan of Intellect) === Koeus.
+I found an alternative spelling of Coeus, spelled KOIOS and facepalmed.
+This is a small utility library that has little to no dependencies. If
+you need something greater, I suggest you reach for [Ramda](http://ramdajs.com/) or if you've jumped
+into the deep end of the pool you could look at [Folktale](http://folktalejs.org/).
+
+If you're still unsatisfied, you could look at [Elm](http://elm-lang.org/) or for the purists, [Purescript](http://www.purescript.org/).
+
 
 ## TOC
 * [Installation](#installation)
@@ -23,10 +31,19 @@ npm install koeus
 
 Example of usage:
 
+Note: All non-unary functions that do not have a variable number
+of arguments (such as pipe) are auto curried, so that you can apply some or all arguments to it.
+
 ```js
 import { map } from 'koeus'
 
 const xs = map(x => x + 1, [1,2,3]) // [2,3,4]
+
+// or, because map is auto curried
+
+const addOne = x => x + 1
+const mapAddOne(addOne)
+const ys = mapAddOne([1,2,3]) // [2,3,4]
 ```
 
 ## Functions
@@ -134,6 +151,7 @@ Flattens a list one level.
 
 ```js
     import { flatten } from 'koeus'
+
     const flattened = flatten([[2],[3],[4]]) // [2,3,4]
 ```
 
@@ -142,6 +160,7 @@ Flattens a list recursively n-depth levels.
 
 ```js
     import { deepFlatten } from 'koeus'
+
     const flattened = deepFlatten([[2, [3]],[3,[3,4]],[4]]) // [2,3,3,3,4,4]
 ```
 
@@ -151,6 +170,7 @@ passes the predicate passed in, the second which does not.
 
 ```js
     import { partition } from 'koeus'
+
     const arr = [1,2,3,4]
     const isEven = x => x % 2 === 0
     const partitioned = partition(isEven)(arr) // [[2,4],[1,3]]
@@ -161,6 +181,7 @@ passes the predicate passed in, the second which does not.
 Takes an object, then returns an array containing the values from it's keys, one level deep.
 ```js
     import { entries } from 'koeus'
+
     const obj = { id: 2, name: 'Will'}
     const vals = entries(obj) // [2, Will]
 ```
