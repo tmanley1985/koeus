@@ -77,7 +77,7 @@ Composes unary functions from left to right.
     const addOne = add(1)
     const addTwo = add(2)
     const addThree = pipe(addOne, addTwo)
-    const four = addThree(1)
+    const four = addThree(1) // 4
 ```
 
 #### K
